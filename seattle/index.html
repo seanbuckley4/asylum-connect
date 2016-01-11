@@ -10,8 +10,7 @@
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/asylum-connect/assets/js/jquery-1.12.0.min.js" type="text/javascript"></script>
   <script src="/asylum-connect/assets/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="/asylum-connect/assets/js/main.js" type="text/javascript"></script>
   <!-- Google Maps API -->
@@ -28,7 +27,7 @@
 
   <body>
 
-    <header style="background-color: #6987bf;">
+    <header style="background-color: #6987bf; position: fixed; top: 0; left: 0; right: 0; z-index: 1;">
 
 <div style="padding: 20px;">
   <div>
@@ -41,78 +40,75 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="filters">
-  <!-- data-spy="affix" data-offset-top="280" -->
-  <h3 id="location-query">Find LGBTQ- and asylum-friendly resources in Seattle, Washington.</h3>
-  <h4 id="category-query">What types of service are you looking for? Select all that apply:</h4>
-  <div class="btn-group">
-    <button type="button" id="medical" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-medical btn-icon"></span>Medical<span class="fa fa-angle-down"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#"><label><input type="checkbox" id="medical-clinics"/>Medical Clinics</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="womens-health"/>Women's Health</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="sexual-health"/>Sexual Health</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="trans-health"/>Trans Health</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="dental-care"/>Dental Care</label></a></li>
-    </ul>
-  </div>
-  <div class="btn-group">
-    <button type="button" id="legal" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-legal btn-icon"></span>Legal<span class="fa fa-angle-down"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#"><label><input type="checkbox" id="legal-aid"/>Legal Aid</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="documentation"/>Documentation</label></a></li>
-    </ul>
-  </div>
-  <button type="button" id="housing" class="btn-category btn btn-default" data-toggle="button"><span class="icon-housing btn-icon"></span>Housing</button>
-  <button type="button" id="food" class="btn-category btn btn-default" data-toggle="button"><span class="icon-food btn-icon"></span>Food</button>
-  <button type="button" id="hygiene" class="btn-category btn btn-default" data-toggle="button"><span class="icon-hygiene btn-icon"></span>Hygiene</button>
-  <button type="button" id="computers" class="btn-category btn btn-default" data-toggle="button"><span class="icon-computers btn-icon"></span>Computers & Internet</button>
-  <button type="button" id="employment" class="btn-category btn btn-default" data-toggle="button"><span class="icon-employment btn-icon"></span>Employment</button>
-  <div class="btn-group">
-    <button type="button" id="education" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-education btn-icon"></span>Education<span class="fa fa-angle-down"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#"><label><input type="checkbox" id="english-classes"/>English Classes</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="libraries"/>Libraries</label></a></li>
-    </ul>
-  </div>
-  <div class="btn-group">
-    <button type="button" id="community" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-community btn-icon"></span>Community Support<span class="fa fa-angle-down"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#"><label><input type="checkbox" id="community-centers"/>Community Centers</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="lgbt-organizations"/>LGBT Organizations</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="cultural-organizations"/>Cultural Organizations</label></a></li>
-    </ul>
-  </div>
-  <div class="btn-group">
-    <button type="button" id="mental-health" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-mental-health btn-icon"></span>Mental Health<span class="fa fa-angle-down"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#"><label><input type="checkbox" id="support-groups"/>Support Groups</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="private-counseling"/>Private Counseling</label></a></li>
-      <li><a href="#"><label><input type="checkbox" id="psychiatry"/>Psychiatry</label></a></li>
-    </ul>
-  </div>
-  <button type="button" id="mail" class="btn-category btn btn-default" data-toggle="button"><span class="icon-mail btn-icon"></span>Mail</button>
-  <button type="button" id="recreation" class="btn-category btn btn-default" data-toggle="button"><span class="icon-recreation btn-icon"></span>Sport & Entertainment</button>
-
-  <h4 id="feature-query">What additional features are important to you? Select all that apply:</h4>
-  <button type="button" id="confidential" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-confidential btn-icon"></span>Confidential</button>
-  <button type="button" id="free" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-free btn-icon"></span>Free</button>
-  <button type="button" id="translation" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-translation btn-icon"></span>Language Translation Available</button>
-</div>
-
-<div class="resources row">
-  <div class="catalog col-md-6">
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> The AsylumConnect team will do its best to confirm basic facts about service providers listed on this website. However, we lack the necessary resources to adequately vet service providers and make no representations regarding the viability or capabilities of any such providers. Consequently, AsylumConnect assumes no responsibility for the actions of providers listed on this website and asylum seekers who contact any such providers do so at their own risk.
+          <div class="main col-md-7 col-sm-12">
+  <div class="filters">
+    <!-- data-spy="affix" data-offset-top="280" -->
+    <h3 id="location-query">Find LGBTQ- and asylum-friendly resources in Seattle, Washington.</h3>
+    <h4 id="category-query">What types of service are you looking for? Select all that apply:</h4>
+    <div class="btn-group">
+      <button type="button" id="medical" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-medical btn-icon"></span>Medical<span class="fa fa-angle-down"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><label><input type="checkbox" id="medical-clinics"/>Medical Clinics</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="womens-health"/>Women's Health</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="sexual-health"/>Sexual Health</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="trans-health"/>Trans Health</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="dental-care"/>Dental Care</label></a></li>
+      </ul>
     </div>
+    <div class="btn-group">
+      <button type="button" id="legal" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-legal btn-icon"></span>Legal<span class="fa fa-angle-down"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><label><input type="checkbox" id="legal-aid"/>Legal Aid</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="documentation"/>Documentation</label></a></li>
+      </ul>
+    </div>
+    <button type="button" id="housing" class="btn-category btn btn-default" data-toggle="button"><span class="icon-housing btn-icon"></span>Housing</button>
+    <button type="button" id="food" class="btn-category btn btn-default" data-toggle="button"><span class="icon-food btn-icon"></span>Food</button>
+    <button type="button" id="hygiene" class="btn-category btn btn-default" data-toggle="button"><span class="icon-hygiene btn-icon"></span>Hygiene</button>
+    <button type="button" id="computers" class="btn-category btn btn-default" data-toggle="button"><span class="icon-computers btn-icon"></span>Computers & Internet</button>
+    <button type="button" id="employment" class="btn-category btn btn-default" data-toggle="button"><span class="icon-employment btn-icon"></span>Employment</button>
+    <div class="btn-group">
+      <button type="button" id="education" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-education btn-icon"></span>Education<span class="fa fa-angle-down"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><label><input type="checkbox" id="english-classes"/>English Classes</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="libraries"/>Libraries</label></a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" id="community" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-community btn-icon"></span>Community Support<span class="fa fa-angle-down"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><label><input type="checkbox" id="community-centers"/>Community Centers</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="lgbt-centers"/>LGBT Centers</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="cultural-centers"/>Cultural Centers</label></a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" id="mental-health" class="btn-category-group btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-mental-health btn-icon"></span>Mental Health<span class="fa fa-angle-down"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><label><input type="checkbox" id="support-groups"/>Support Groups</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="private-counseling"/>Private Counseling</label></a></li>
+        <li><a href="#"><label><input type="checkbox" id="psychiatry"/>Psychiatry</label></a></li>
+      </ul>
+    </div>
+    <button type="button" id="mail" class="btn-category btn btn-default" data-toggle="button"><span class="icon-mail btn-icon"></span>Mail</button>
+    <button type="button" id="recreation" class="btn-category btn btn-default" data-toggle="button"><span class="icon-recreation btn-icon"></span>Sport & Entertainment</button>
 
-    
-    <div class="resource private-counseling support-groups legal-aid confidential free translation">
-      <header class="resource-header">
-        <h3 class="resource-name" id="api-chaya">API Chaya</h2>
-        </header>
+    <h4 id="feature-query">What additional features are important to you? Select all that apply:</h4>
+    <button type="button" id="confidential" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-confidential btn-icon"></span>Confidential</button>
+    <button type="button" id="free" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-free btn-icon"></span>Free</button>
+    <button type="button" id="translation" class="btn-filter btn btn-default" data-toggle="button"><span class="icon-translation btn-icon"></span>Language Translation Available</button>
+  </div>
 
-        <article class="resource-content">
-          <ul>
+  <div class="resources">
+    <div class="catalog">
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> The AsylumConnect team will do its best to confirm basic facts about service providers listed on this website. However, we lack the necessary resources to adequately vet service providers and make no representations regarding the viability or capabilities of any such providers. Consequently, AsylumConnect assumes no responsibility for the actions of providers listed on this website and asylum seekers who contact any such providers do so at their own risk.
+      </div>
+
+      
+      <div class="resource private-counseling support-groups legal-aid confidential free translation">
+        <header class="resource-header"><h3 class="resource-name" id="api-chaya">API Chaya</h3></header>
+        <article class="resource-content"><ul>
   <li><strong>Description:</strong> Anti-domestic violence agency serving the greater Seattle area.</li>
   <li><strong>Population served:</strong> Serves all Asian, South Asian, and Pacific Islander communities.</li>
   <li><strong>Mailing Address:</strong> API Chaya, P.O. Box 14047, Seattle, WA 98114</li>
@@ -131,8 +127,7 @@
   <li><strong>Additional Information:</strong> Our direct-services program provides advocacy-based counseling for survivors of domestic violence. Many of our clients have intersecting family and immigration law needs. Pro bono services available.</li>
   <li><strong>Non-English Services Available:</strong> Arabic, Bengali, Farsi, Gujarati, Hindi, Kurdish, Punjabi, Urdu.</li>
 </ul>
-
-        </article>
+</article>
 
         
         <span class="icon-legal btn-icon"></span>
@@ -161,16 +156,11 @@
 
         <!-- Google Maps -->
         
-
       </div>
       
-    <div class="resource hygiene mail free">
-      <header class="resource-header">
-        <h3 class="resource-name" id="compass-housing-alliance">Compass Housing Alliance</h2>
-        </header>
-
-        <article class="resource-content">
-          <ul>
+      <div class="resource hygiene mail free">
+        <header class="resource-header"><h3 class="resource-name" id="compass-housing-alliance">Compass Housing Alliance</h3></header>
+        <article class="resource-content"><ul>
   <li><strong>Description:</strong> Provides mail, banking services, restrooms, showers and laundry for homeless and low-income adults.</li>
   <li><strong>Population Served:</strong> Homeless and low-income adults</li>
   <li><strong>Address:</strong> 77 S Washington St, Seattle, WA 98104</li>
@@ -184,8 +174,7 @@
   <li><strong>Website:</strong> <a href="http://www.compasshousingalliance.org/what-we-do-top/day-services/client-services-office/">Client Services Office</a>, <a href="http://www.compasshousingalliance.org/what-we-do-top/day-services/hygiene-center/">Hygiene Center</a></li>
   <li><strong>Additional Information:</strong> The Client Services Office provides free mail and banking services. The Hygiene Center offers homeless men and women a place to use the restroom, take a hot shower and do a load of laundry. Both are open on a drop-in basis. Does not require a government issued ID, but prefers an ID with a picture just to more easily match the service with the person.</li>
 </ul>
-
-        </article>
+</article>
 
         
 
@@ -231,16 +220,11 @@
           </div>
         </div>
         
-
       </div>
       
-    <div class="resource dental-care sexual-health food housing private-counseling confidential translation">
-      <header class="resource-header">
-        <h3 class="resource-name" id="lifelong-aids-alliance">Lifelong AIDS Alliance</h2>
-        </header>
-
-        <article class="resource-content">
-          <ul>
+      <div class="resource dental-care sexual-health food housing private-counseling confidential translation">
+        <header class="resource-header"><h3 class="resource-name" id="lifelong-aids-alliance">Lifelong AIDS Alliance</h3></header>
+        <article class="resource-content"><ul>
   <li><strong>Description:</strong> The Lifelong Dental Program (LDP) is a newly established, comprehensive oral health access program for low-income individuals living with HIV/AIDS who reside in King, Island, and Snohomish Counties.</li>
   <li><strong>Population Served:</strong> To be eligible for the program, clients must:
     <ul>
@@ -258,8 +242,7 @@ We are receiving dozens of calls a day and may not be able to call you back righ
   <li><strong>Additional Information:</strong> Eligible clients should contact their case manager for assistance applying to the LDP. Those who are not currently working with a case manager should contact the LDP coordinator at (206) 957-1716 to apply. The LDP coordinator will work with enrolled clients to set an appointment with a participating dental clinic.
 Application available online <a href="http://www.llaa.org/sites/default/files/attachments/ldpapplication0.pdf">here</a>.</li>
 </ul>
-
-        </article>
+</article>
 
         
         <span class="icon-medical btn-icon"></span>
@@ -296,26 +279,20 @@ Application available online <a href="http://www.llaa.org/sites/default/files/at
 
         <!-- Google Maps -->
         
-
       </div>
       
-    <div class="resource housing food hygiene private-counseling free">
-      <header class="resource-header">
-        <h3 class="resource-name" id="peter's-place-(compass-housing-alliance)">Peter's Place (Compass Housing Alliance)</h2>
-        </header>
-
-        <article class="resource-content">
-          <ul>
+      <div class="resource housing food hygiene private-counseling free">
+        <header class="resource-header"><h3 class="resource-name" id="peter's-place-(compass-housing-alliance)">Peter's Place (Compass Housing Alliance)</h3></header>
+        <article class="resource-content"><ul>
   <li><strong>Description:</strong> A welcoming space for homeless adults, offering hot coffee and meals, showers, laundry and case management.</li>
   <li><strong>Population Served:</strong> Homeless adults</li>
   <li><strong>Address:</strong> 901 Rainier Ave S, Seattle, WA 98144</li>
-  <li><strong>Hours:</strong> Peter’s Place Day Program open Sunday - Thursday 8am - 5:30pm</li>
+  <li><strong>Hours:</strong> Peter’s Place Day Program open Sunday - Thursday, 8am - 5:30pm</li>
   <li><strong>Phone Number:</strong> 206-474-1630</li>
   <li><strong>Website:</strong> <a href="http://www.compasscenter.org/what-we-do-top/day-services/peters-place/">http://www.compasscenter.org/what-we-do-top/day-services/peters-place/</a></li>
   <li><strong>Additional Information:</strong> Access to the Peter’s Place overnight shelter is by referral only through REACH and the Metropolitan Improvement District. Does not require a government issued ID, but prefers an ID with a picture just to more easily match the service with the person. People can seek refuge, meals and basic services as well as connect with case management, entitlements and other benefits, mental health counseling and nursing services.</li>
 </ul>
-
-        </article>
+</article>
 
         
         <span class="icon-mental-health btn-icon"></span>
@@ -379,16 +356,16 @@ Application available online <a href="http://www.llaa.org/sites/default/files/at
           </div>
         </div>
         
-
       </div>
       
     </div>
-
-    <div class="map col-md-6">
-      <div id="map" class="map-canvas">
-      </div>
-    </div>
   </div>
+</div>
+
+<div class="map hidden-sm hidden-xs">
+  <div id="map" class="map-canvas">
+  </div>
+</div>
 
       </div>
     </div>
